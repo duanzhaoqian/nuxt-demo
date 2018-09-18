@@ -1,6 +1,6 @@
 <template>
   <div>
-    <ul>
+    <!-- <ul>
       <li v-for="(r,index) in reoutes"
           :key="index">
         <nuxt-link :to="{name:r.name}">
@@ -9,7 +9,7 @@
           </el-button>
         </nuxt-link>
       </li>
-    </ul>
+    </ul> -->
     <nuxt/>
   </div>
 </template>

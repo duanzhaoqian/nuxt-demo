@@ -34,7 +34,9 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui'
+    '@/plugins/element-ui',
+    '@/plugins/icons-svg',
+    '@/plugins/permission.js'
   ],
 
   /*
@@ -55,6 +57,30 @@ module.exports = {
   ** Build configuration
   */
   build: {
+    loaders:[{
+      test: /\.svg$/,
+      loader: 'svg-sprite-loader',
+      include: ['@/assets/svg'],
+      options: {
+        symbolId: 'icon-[name]'
+      }
+    },{
+      test: /\.(png|jpe?g|gif|svg)$/,
+      loader: 'url-loader',
+      exclude:['@/assets/svg'],
+      query: {
+        limit: 1000, // 1KO
+        name: 'img/[name].[hash:7].[ext]'
+      }
+    },
+    {
+      test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+      loader: 'url-loader',
+      query: {
+        limit: 1000, // 1 KO
+        name: 'fonts/[name].[hash:7].[ext]'
+      }
+    }],
     /*
     ** You can extend webpack config here
     */
