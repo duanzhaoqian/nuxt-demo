@@ -35,7 +35,7 @@ module.exports = {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/icons-svg',
-    // '@/plugins/permission.js'
+    // '@/plugins/permission.js',
   ],
 
   /*
