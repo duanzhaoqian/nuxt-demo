@@ -5,7 +5,9 @@ const pkg = require('./package');
 // }
 module.exports = {
   mode: 'universal',
-
+  router: {
+    middleware: 'auth'
+  },
   /*
   ** Headers of the page
   */
@@ -27,7 +29,7 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['normalize.css', 'element-ui/lib/theme-chalk/index.css'],
+  css: ['assets/css/main.css','normalize.css', 'element-ui/lib/theme-chalk/index.css'],
 
   /*
   ** Plugins to load before mounting the App
@@ -35,7 +37,7 @@ module.exports = {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/icons-svg',
-    // '@/plugins/permission.js',
+    // {src:'@/plugins/permission.js',ssr:false},
   ],
 
   /*
