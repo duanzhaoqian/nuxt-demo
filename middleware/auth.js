@@ -6,17 +6,16 @@ export default function({ route, req, res, redirect }) {
   let isServer = process.server
   let redirectURL = '/login'
   var token, path
-  console.log('isClient'+isClient)
-  console.log('isServer'+isServer)
+
   //在服务端
   if (isServer) {
-    let cookies = auth.getcookiesInServer(req)
+    let cookies = auth.getTokenInServer(req)
     path = req.originalUrl
-    token = cookies.token ? cookies.token : ''
+    token = cookies
   }
   //在客户端判读是否需要登陆
   if (isClient) {
-    token = auth.getcookiesInClient()
+    token = auth.getTokenInClient()
     path = route.path
   }
   
@@ -24,12 +23,10 @@ export default function({ route, req, res, redirect }) {
     redirectURL = redirectURL+'?ref=' + encodeURIComponent(path)
   }
   if (whiteList.indexOf(path.split('?')[0]) !== -1) {
-    //console.log('whiteList  '+path.split('?')[0])
     return
   }
   //需要进行权限判断的页面开头
   if (!token) {
-    console.log('token >>' +token)
     redirect(redirectURL)
   }
 }

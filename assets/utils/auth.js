@@ -15,16 +15,16 @@ export function removeToken() {
 }
 export default {
   //获取服务端cookie
-  getcookiesInServer:function (req) {
+  getTokenInServer:function (req) {
     let service_cookie = {};
     req && req.headers.cookie && req.headers.cookie.split(';').forEach(function (val) {
       let parts = val.split('=');
       service_cookie[parts[0].trim()] = (parts[1] || '').trim();
     });
-    return service_cookie;
+    return service_cookie[TokenKey];
   },
   //获取客户端cookie
-  getcookiesInClient:function () {
+  getTokenInClient:function () {
     return getToken()
   }
 }
