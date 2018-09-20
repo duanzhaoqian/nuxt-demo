@@ -4,7 +4,7 @@ const pkg = require('./package');
 //   return path.join(__dirname, '..', dir);
 // }
 module.exports = {
-  mode: 'universal',
+  mode: 'spa',
   router: {
     middleware: 'auth'
   },
