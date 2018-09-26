@@ -2,7 +2,10 @@ const pkg = require('./package');
 module.exports = {
   mode: 'spa',
   router: {
-    middleware: 'auth'
+    middleware: 'auth',
+  },
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
   /*
   ** Headers of the page
@@ -25,9 +28,18 @@ module.exports = {
   /*
   ** Global CSS
   */
-  css: ['assets/css/main.css','normalize.css', 'element-ui/lib/theme-chalk/index.css',
-  'assets/css/element-ui.scss','assets/css/index.scss','assets/css/mixin.scss',
-  'assets/css/transition.scss','assets/css/variables.scss','assets/css/btn.scss','assets/css/sidebar.scss'],
+  css: [
+    'assets/css/main.css',
+    'normalize.css',
+    'element-ui/lib/theme-chalk/index.css',
+    'assets/css/element-ui.scss',
+    'assets/css/index.scss',
+    'assets/css/mixin.scss',
+    'assets/css/transition.scss',
+    'assets/css/variables.scss',
+    'assets/css/btn.scss',
+    'assets/css/sidebar.scss',
+  ],
 
   /*
   ** Plugins to load before mounting the App
@@ -44,12 +56,22 @@ module.exports = {
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
     '@nuxtjs/axios',
+    '@nuxtjs/proxy',
   ],
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    proxy: [
+      [
+        '/api',
+        {
+          target: 'http://localhost:3001', // api主机
+          pathRewrite: { '^/api': '/' },
+        },
+      ],
+    ],
   },
 
   /*
