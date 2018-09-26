@@ -17,48 +17,7 @@
 
 <script>
 import SidebarItem from './SidebarItem'
-export const constantRouterMap = [
-  {
-    path: '/',
-   // name: 'Home',
-   // hidden: false,
-   // meta: { title: 'Home', icon: 'example' },
-    children: [{
-        path: '',
-        name: '',
-        meta: { title: 'Home', icon: 'example' }
-      }]
-  },
-  {
-    path: '/request',
-   // name: 'Request',
-  //  meta: { title: 'RequestProcess', icon: 'tree' },
-    children: [
-      {
-        path: '',
-        name: 'process',
-        meta: { title: 'Request', icon: 'tree' }
-      }
-    ]
-  },
-  {
-    path: '/task',
-   name: 'Task',
-   meta: { title: 'Task', icon: 'example' },
-    children: [
-      {
-        path: '',
-        name: 'index',
-        meta: { title: 'Task', icon: 'example' }
-      },
-      // {
-      //   path: 'id',
-      //   name: 'id',
-      //   meta: { title: 'Task/Id', icon: 'example' }
-      // }
-    ]
-  }
-]
+import constantRouterMap from '@/assets/utils/menu.js'
 export default {
   components: { SidebarItem },
   computed: {
