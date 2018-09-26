@@ -47,6 +47,7 @@ module.exports = {
   plugins: [
     '@/plugins/element-ui',
     '@/plugins/icons-svg',
+    '@/plugins/filters',
     // {src:'@/plugins/permission.js',ssr:false},
   ],
 
@@ -58,20 +59,20 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/proxy',
   ],
+  proxy: [
+    [
+      '/api',
+      {
+        target: 'http://10.12.40.152:9080', // api主机
+        pathRewrite: { '^/api': '/' },
+      },
+    ],
+  ],
   /*
   ** Axios module configuration
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
-    proxy: [
-      [
-        '/api',
-        {
-          target: 'http://localhost:3001', // api主机
-          pathRewrite: { '^/api': '/' },
-        },
-      ],
-    ],
   },
 
   /*
