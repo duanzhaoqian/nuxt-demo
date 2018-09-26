@@ -9,7 +9,7 @@
 <script>
 import icon from '~/components/SvgIcon'
 export default {
- // middleware:'auth',
+ layout:'Layout',
   components:{icon}
 }
 </script>

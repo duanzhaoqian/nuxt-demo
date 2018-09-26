@@ -13,6 +13,7 @@
 
 <script>
 export default {
+  layout:'Layout',
   components:{},
   props:{},
   data(){
