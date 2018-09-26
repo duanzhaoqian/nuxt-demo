@@ -30,15 +30,9 @@ module.exports = {
   */
   css: [
     'assets/css/main.css',
-    'normalize.css',
+    'normalize.css/normalize.css',
     'element-ui/lib/theme-chalk/index.css',
-    'assets/css/element-ui.scss',
     'assets/css/index.scss',
-    'assets/css/mixin.scss',
-    'assets/css/transition.scss',
-    'assets/css/variables.scss',
-    'assets/css/btn.scss',
-    'assets/css/sidebar.scss',
   ],
 
   /*
