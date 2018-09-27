@@ -15,7 +15,7 @@ export const constantRouterMap = [
   {
     path: '/request',
     name: 'request',
-    meta: { title: 'request', icon: 'tree' },
+    meta: { title: 'Request', icon: 'tree' },
     children: [
       {
         path: '/request',
@@ -33,11 +33,6 @@ export const constantRouterMap = [
         path: '/task',
         name: 'index',
         meta: { title: 'Task', icon: 'example' },
-      },
-      {
-        path: '/task/id',
-        name: 'id',
-        meta: { title: 'Task/Id', icon: 'example' },
       },
     ],
   },
