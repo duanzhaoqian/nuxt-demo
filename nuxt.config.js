@@ -39,10 +39,11 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/element-ui',
-    '@/plugins/icons-svg',
-    '@/plugins/filters',
-    '@/plugins/waves',
+    { src: '@/plugins/element-ui', ssr: false },
+    { src: '@/plugins/icons-svg', ssr: false },
+    { src: '@/plugins/filters', ssr: false },
+    { src: '@/plugins/waves', ssr: false },
+    { src: '@/plugins/mixins/resize', ssr: false },
     // {src:'@/plugins/permission.js',ssr:false},
   ],
 
