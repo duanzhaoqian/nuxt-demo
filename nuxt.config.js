@@ -5,7 +5,7 @@ module.exports = {
     middleware: 'auth',
   },
   env: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    baseUrl: process.env.BASE_URL || '',
   },
   /*
   ** Headers of the page
