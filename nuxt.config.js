@@ -42,6 +42,7 @@ module.exports = {
     '@/plugins/element-ui',
     '@/plugins/icons-svg',
     '@/plugins/filters',
+    '@/plugins/waves',
     // {src:'@/plugins/permission.js',ssr:false},
   ],
 
@@ -102,6 +103,8 @@ module.exports = {
     /*
     ** You can extend webpack config here
     */
+    publicPath: '/static/',
+    //vendor: ['axios', 'js-cookie', 'moment'],
     extend(config, ctx) {
       // get and remove file loader
       const rule = config.module.rules.find(

@@ -86,7 +86,7 @@
 </template>
 
 <script>
-import waves from '@/assets/waves' // 水波纹指令
+import waves from '@/plugins/waves' // 水波纹指令
 import request from '@/assets/utils/request'
 export default {
   layout:"Layout",
