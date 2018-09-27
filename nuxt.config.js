@@ -7,6 +7,9 @@ module.exports = {
   env: {
     baseUrl: process.env.BASE_URL || '',
   },
+  performance: {
+    gzip: true,
+  },
   /*
   ** Headers of the page
   */
@@ -30,7 +33,7 @@ module.exports = {
   */
   css: [
     'assets/css/main.css',
-    'normalize.css/normalize.css',
+    'normalize.css',
     'element-ui/lib/theme-chalk/index.css',
     'assets/css/index.scss',
   ],
@@ -44,7 +47,6 @@ module.exports = {
     { src: '@/plugins/filters', ssr: false },
     { src: '@/plugins/waves', ssr: false },
     { src: '@/plugins/mixins/resize', ssr: false },
-    // {src:'@/plugins/permission.js',ssr:false},
   ],
 
   /*
@@ -75,37 +77,11 @@ module.exports = {
   ** Build configuration
   */
   build: {
-    // loaders: [
-    //   {
-    //     test: /\.svg$/,
-    //     loader: 'svg-sprite-loader',
-    //     // include: [resolve('static/svg')],
-    //     options: {
-    //       symbolId: 'icon-[name]',
-    //     },
-    //   },
-    //   {
-    //     test: /\.(png|jpe?g|gif|svg)$/,
-    //     loader: 'url-loader',
-    //     query: {
-    //       limit: 1000, // 1KO
-    //       name: 'img/[name].[hash:7].[ext]',
-    //     },
-    //   },
-    //   {
-    //     test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
-    //     loader: 'url-loader',
-    //     query: {
-    //       limit: 1000, // 1 KO
-    //       name: 'fonts/[name].[hash:7].[ext]',
-    //     },
-    //   },
-    // ],
     /*
     ** You can extend webpack config here
     */
     publicPath: '/static/',
-    //vendor: ['axios', 'js-cookie', 'moment'],
+    // vendor: ['@/plugins/element-ui', '@/plugins/filter', '@/plugins/icons-svg'],
     extend(config, ctx) {
       // get and remove file loader
       const rule = config.module.rules.find(

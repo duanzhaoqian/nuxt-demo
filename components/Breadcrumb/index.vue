@@ -54,7 +54,7 @@ export default {
       })
       const first = matched[0]
       if (first && first.name !== 'home') {
-        matched = [{ path: '/', meta: { title: 'Dashboard' }}].concat(matched)
+        matched = [{ path: '/', meta: { title: 'Home' }}].concat(matched)
       }
       this.levelList = matched
     }

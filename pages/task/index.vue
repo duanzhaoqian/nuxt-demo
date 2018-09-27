@@ -177,7 +177,7 @@ export default {
         currentPage: 1,
         pageSize: 20,
         importance: undefined,
-        processInstanceId: undefined,
+        processInstanceId: this.$route.query.processInstanceId,
         type: undefined,
         sort: 'process_instance_id desc'
       },
@@ -190,8 +190,13 @@ export default {
     }
   },
   created() {
-    this.listQuery.processInstanceId = this.$route.query.processInstanceId
+    //this.listQuery.processInstanceId = this.$route.query.processInstanceId
+    //console.log( this.listQuery.processInstanceId)
     this.fetchData()
+  },
+  fetch(context){
+    //console.log(context.query.processInstanceId)
+    //this.listQuery.processInstanceId = context.query.processInstanceId
   },
   methods: {
    async fetchData() {

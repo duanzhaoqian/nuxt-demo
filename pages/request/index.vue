@@ -45,10 +45,10 @@
       <el-table-column label="PROCESSINSTANCEID"
                        width="180">
         <template slot-scope="scope">
-          <router-link :to="{ path: '/task', query: { processInstanceId: scope.row.processInstanceId}}">
+          <nuxt-link :to="{ path: '/task', query: { processInstanceId: scope.row.processInstanceId}}">
             <el-button :type="scope.row.status | statusTagFilter"
                        size="mini">{{ scope.row.processInstanceId }}</el-button>
-          </router-link>
+          </nuxt-link>
         </template>
       </el-table-column>
       <el-table-column prop="productInstanceCode"
